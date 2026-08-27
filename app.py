@@ -290,7 +290,7 @@ def calcola_proiezioni_avanzate(variazioni_principali, variazioni_aggiuntive):
 def ottieni_dati_globali():
     """Restituisce direttamente i dati storici reali per l'Italia senza dipendere da internet"""
     return pd.DataFrame({
-        'anno':,
+        'anno': list((2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025)),
         'pil_pro_capite': [32450.0, 32900.0, 30100.0, 32200.0, 33500.0, 34000.0, 34222.0, 34500.0],
         'over65_percentuale': [22.6, 22.9, 23.2, 23.5, 23.8, 24.0, 24.2, 24.5],
         'spesa_sanitaria_pro_capite': [2850.0, 2900.0, 3100.0, 3150.0, 3200.0, 3250.0, 3283.0, 3310.0],
