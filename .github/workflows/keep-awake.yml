@@ -1,0 +1,21 @@
+name: Keep Streamlit Awake
+
+on:
+  schedule:
+    # Esegue l'azione ogni 10 ore (cron standard)
+    - cron: '0 */10 * * *'
+  workflow_dispatch: # Ti permette di avviarlo anche a mano da GitHub se serve
+
+jobs:
+  keep-awake:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Fai un commit vuoto per resettare il timer di Streamlit
+      run: |
+        git config --global user.name "Binomiale Bot"
+        git config --global user.email "bot@binomiale.it"
+        git commit --allow-empty -m "Keep-alive: risveglio pianificato del simulatore"
+        git push
